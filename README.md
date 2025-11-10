@@ -27,3 +27,26 @@ Check out the [Convex docs](https://docs.convex.dev/) for more information on ho
 ## HTTP API
 
 User-defined http routes are defined in the `convex/router.ts` file. We split these routes into a separate file from `convex/http.ts` to allow us to prevent the LLM from modifying the authentication routes.
+
+## AI Recipe Generation (Groq API Setup)
+
+This app uses Groq API for AI-powered recipe generation. To set it up:
+
+1. **Add your Groq API key to `.env.local`**:
+   ```bash
+   GROQ_API_KEY=your_actual_groq_api_key_here
+   ```
+
+2. **Sync the API key to Convex**:
+   ```bash
+   npm run setup:groq
+   ```
+   
+   Or manually:
+   ```bash
+   npx convex env set GROQ_API_KEY your_actual_groq_api_key_here
+   ```
+
+3. **Get your Groq API key**: Sign up at [console.groq.com](https://console.groq.com) and create an API key.
+
+The AI recipe generation will automatically use the Groq API once the environment variable is set in Convex.
